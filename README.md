@@ -32,7 +32,7 @@ top-level, and so on to any depth.
 In this @POLL_ONE_DEVICE.ps1 I am using one default IP address(SNMP enabled) to check the efficiency of the code.
 For checking the parameters the user has to click the button respectively.
 
-
+![one](https://user-images.githubusercontent.com/13145914/27858118-a141aff0-6191-11e7-9121-9bb30d01a5aa.jpg)
 
 ## Polling of Two Devices
 In this @POLL_2_DEVICES.ps1 I am using two default IP addresses(SNMP enabled) to check the efficiency of the code.
@@ -48,12 +48,32 @@ The User just need to click on "Click to Continue" and all the values will be di
 
 ## Auto Polling of Devices
 
-![autopoll](https://user-images.githubusercontent.com/13145914/27817277-e28bcade-60ad-11e7-88dc-204802064d66.jpg)
+![auto](https://user-images.githubusercontent.com/13145914/27858100-981520ba-6191-11e7-9c19-f65483f698a9.jpg)
 
 ## Further Improvements
 Right now the IP address is not "user input", the devices which are need to be monitored their IPs are written in the code itself.
 So for getting the parameters of a new device we need to change in the code and then again run it. This is a lengthy task and impractical.
 Next module will be user friendly and will receive the user input.
+
+## User Input Enabled Monitoring 
+In this the user has to enter the IP addrerss(SNMP enabled) for which the monitoring of the system is required.
+@User_Input_Poll.ps1
+Following are the some screenshots of the above mentioned file's execution.
+
+### Entering the IP address
+![poll_user](https://user-images.githubusercontent.com/13145914/27858128-a7d54f34-6191-11e7-9cfd-b7812ebc9c56.jpg)
+
+### User Prompt
+![poll_user2](https://user-images.githubusercontent.com/13145914/27858138-ae7c6aac-6191-11e7-89ef-ad22d3a5d052.jpg)
+
+### Entering for second device
+![poll_user3](https://user-images.githubusercontent.com/13145914/27858201-f8540612-6191-11e7-8a59-d851c9740726.jpg)
+
+## Further any improvements if you feel to mention then they are most welcome as there is always a chance of getting better.
+
+# Contact:
+@mail: kshitiz.agarwal95@gmail.com
+feel free to contact me for any queries and suggestions.
 
 
 
