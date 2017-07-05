@@ -67,7 +67,8 @@ Following are the some screenshots of the above mentioned file's execution.
 ![poll_user2](https://user-images.githubusercontent.com/13145914/27858138-ae7c6aac-6191-11e7-89ef-ad22d3a5d052.jpg)
 
 ### Entering for second device
-![poll_user3](https://user-images.githubusercontent.com/13145914/27858201-f8540612-6191-11e7-8a59-d851c9740726.jpg)
+![poll_user3](https://user-images.githubusercontent.com/13145914/27858955-dbe0c56c-6194-11e7-8246-697100c7434a.jpg)
+
 
 ## Further any improvements if you feel to mention then they are most welcome as there is always a chance of getting better.
 
