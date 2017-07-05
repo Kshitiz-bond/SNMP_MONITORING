@@ -32,7 +32,7 @@ top-level, and so on to any depth.
 In this @POLL_ONE_DEVICE.ps1 I am using one default IP address(SNMP enabled) to check the efficiency of the code.
 For checking the parameters the user has to click the button respectively.
 
-![poll_one_ss](https://user-images.githubusercontent.com/13145914/27817115-114dffaa-60ad-11e7-9f0e-56bd195768eb.jpg)
+
 
 ## Polling of Two Devices
 In this @POLL_2_DEVICES.ps1 I am using two default IP addresses(SNMP enabled) to check the efficiency of the code.
