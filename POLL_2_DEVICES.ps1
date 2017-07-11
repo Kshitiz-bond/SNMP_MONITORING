@@ -11,7 +11,7 @@ $Form.Text = "Form"
 $Form.TopMost = $true
 $Form.Width = 1000
 $Form.Height = 1000
-
+$Form.AutoScroll = $true
 ###################DEVICE 2 PARAMETERS
 
 $label19 = New-Object system.windows.Forms.Label
