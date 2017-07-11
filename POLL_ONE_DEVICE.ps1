@@ -7,6 +7,7 @@ $Form.Text = "Form"
 $Form.TopMost = $true
 $Form.Width = 800
 $Form.Height = 700
+$Form.AutoScroll = $true
 
 $label3 = New-Object system.windows.Forms.Label
 $label3.Text = "UpTime"
