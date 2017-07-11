@@ -12,6 +12,7 @@ $Form.Text = "Form"
 $Form.TopMost = $false
 $Form.Width = 1000
 $Form.Height = 600
+$Form.AutoScroll = $true
 
 ###################DEVICE 2 PARAMETERS
 
