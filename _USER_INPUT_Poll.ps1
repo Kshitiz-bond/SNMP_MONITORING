@@ -1,20 +1,19 @@
 ﻿
 $Button_Click = 
 {
-   
-
-#####adding a NEW form 
+   #####adding a NEW form 
 
 Add-Type -AssemblyName System.Windows.Forms
 
 $Form = New-Object system.Windows.Forms.Form
-$Form.Text = "Form"
+$Form.Text = "SNMP"
 $Form.TopMost = $false
 $Form.Width = 1000
 $Form.Height = 600
-$Form.AutoScroll = $true
 
-###################DEVICE 2 PARAMETERS
+$Icon = New-Object system.drawing.icon ("C:\Users\amar\Desktop\kkshitiz\network_Hq0_icon.ico")
+$Form.Icon = $Icon
+####DEVICE 2 PARAMETERS
 
 $label19 = New-Object system.windows.Forms.Label
 $label19.Text = "DEVICE 2"
@@ -31,7 +30,7 @@ $Form.controls.Add($label19)
 $label9 = New-Object system.windows.Forms.Label
 $label9.Text = "UpTime2"
 $label9.AutoSize = $true
-$label9.Width = 250
+$label9.Width = 300
 $label9.Height = 25
 $label9.location = new-object system.drawing.point(500,25)
 $label9.Font = "Microsoft Sans Serif,10,style=Bold"
@@ -41,7 +40,7 @@ $Form.controls.Add($label9)
 
 $label12 = New-Object system.windows.Forms.Label
 $label12.Text = "STATUS"
-$label12.BackColor = "#f10741"
+$label12.BackColor = "#00ffff"
 $label12.AutoSize = $true
 $label12.Width = 35
 $label12.Height = 15
@@ -138,7 +137,7 @@ $Form.controls.Add($label29)
 $label3 = New-Object system.windows.Forms.Label
 $label3.Text = "SysUptime1"
 $label3.AutoSize = $true
-$label3.Width = 250
+$label3.Width = 300
 $label3.Height = 25
 $label3.location = new-object system.drawing.point(3,25)
 $label3.Font = "Microsoft Sans Serif,10,style=Bold"
@@ -146,7 +145,7 @@ $Form.controls.Add($label3)
 
 $label5 = New-Object system.windows.Forms.Label
 $label5.Text = "STATUS"
-$label5.BackColor = "#f10741"
+$label5.BackColor = "#00ffff"
 $label5.AutoSize = $true
 $label5.Width = 35
 $label5.Height = 15
@@ -217,7 +216,7 @@ $label8.location = new-object system.drawing.point(3,150)
 $label8.Font = "Microsoft Sans Serif,10,style=Bold"
 $Form.controls.Add($label8)
 
-
+###First Input BOX
 
 $button4 = New-Object system.windows.Forms.Button
 $button4.Text = "Enter the IP address of First Device"
@@ -231,7 +230,13 @@ $button4.Add_Click(
   Add-Type -AssemblyName Microsoft.VisualBasic
 $User = [Microsoft.VisualBasic.Interaction]::InputBox('Enter IP address', 'POLLING')
 
+$LogFile = 'C:\log1.txt'
 
+if (test-Connection -ComputerName $User -Count 3 -quiet )
+ {
+Write-Host "$User is Online " -ForegroundColor Green ;
+$label5.Text = "ONLINE"
+$label5.BackColor = "#00ff00"
 
  $a = 1 
 DO
@@ -242,21 +247,26 @@ $label6.Text = snmpget -Os -c public -v 1 $User 1.3.6.1.2.1.1.5.0 ##systemname_2
 $label7.Text = snmpget -Os -c public -v 1 $User 1.3.6.1.2.1.1.4.0 ##contact2
 $label8.Text = snmpget -Os -c public -v 1 $User 1.3.6.1.2.1.1.7.0 #3services2
 $label3.Text = snmpget -Os -c public -v 1 $User 1.3.6.1.2.1.1.3.0 #uptime1
-#$label9.Text = snmpget -Os -c public -v 1 14.7.121.156 1.3.6.1.2.1.1.3.0
+$User, $label3.Text | Out-File $LogFile -Append -Force
 
  $a++
 
-} While ($a -le 10)
+} While ($a -le 8)
 
+$label5.Text = "STATUS"
+$label5.BackColor = "#00ffff"
 
-$label5.BackColor = "#00FF00"
+} else {
+Write-Host "$User - is Offline " -ForegroundColor Red ;
+$label5.Text = "OFFLINE"
+$label5.BackColor = "#ff0000"
+}
 
-   
 }
 )
 $Form.controls.Add($button4)
 
-
+####Second input BOX
 
 $button41 = New-Object system.windows.Forms.Button
 $button41.Text = "Enter the IP address of Second Device"
@@ -270,6 +280,14 @@ $button41.Add_Click(
   Add-Type -AssemblyName Microsoft.VisualBasic
 $User1 = [Microsoft.VisualBasic.Interaction]::InputBox('Enter IP address', 'POLLING')
 
+$LogFile = 'C:\log2.txt'
+
+if (test-Connection -ComputerName $User1 -Count 3 -quiet )
+ {
+Write-Host "$User1 is Online " -ForegroundColor Green ;
+$label12.Text = "ONLINE"
+$label12.BackColor = "#00ff00"
+
 
  $a = 1 
 DO
@@ -280,12 +298,21 @@ $label14.Text = snmpget -Os -c public -v 1 $User1 1.3.6.1.2.1.1.5.0 ##systemname
 $label15.Text = snmpget -Os -c public -v 1 $User1 1.3.6.1.2.1.1.4.0 ##contact2
 $label16.Text = snmpget -Os -c public -v 1 $User1 1.3.6.1.2.1.1.7.0 #3services2
 $label9.Text = snmpget -Os -c public -v 1 $User1 1.3.6.1.2.1.1.3.0  #uptime2
-
+$User1, $label9.Text | Out-File $LogFile -Append -Force
+ 
  $a++
 
-} While ($a -le 10)
+} While ($a -le 8)
 
-$label12.BackColor = "#00FF00"
+$label12.Text = "STATUS"
+$label12.BackColor = "#00ffff"
+
+}
+else {
+Write-Host "$User1 - is Offline " -ForegroundColor Red ;
+$label12.Text = "OFFLINE"
+$label12.BackColor = "#ff0000"
+}
 
 }
 )
@@ -301,10 +328,7 @@ $Form.Dispose()
 }
 
 #######function to open two forms on clicking a button
-################
-##############
-################
-#################################
+#############
 
 Function Generate-Form {
 
