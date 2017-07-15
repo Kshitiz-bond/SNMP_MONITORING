@@ -56,18 +56,28 @@ So for getting the parameters of a new device we need to change in the code and 
 Next module will be user friendly and will receive the user input.
 
 ## User Input Enabled Monitoring 
-In this the user has to enter the IP addrerss(SNMP enabled) for which the monitoring of the system is required.
+In this the user has to enter the IP addrerss(SNMP enabled) for which the monitoring of the system is required. In this the status bar is also active and tells about the connectivity of the device whether it is offline or online or computer has active internet connection.
+Real time output will be saved in a file created in your local computer( Run as Adminstrator). 
 @User_Input_Poll.ps1
 Following are the some screenshots of the above mentioned file's execution.
 
-### Entering the IP address
+### First prompt of form
 ![poll_user](https://user-images.githubusercontent.com/13145914/27858128-a7d54f34-6191-11e7-9cfd-b7812ebc9c56.jpg)
 
-### User Prompt
-![poll_user2](https://user-images.githubusercontent.com/13145914/27858138-ae7c6aac-6191-11e7-89ef-ad22d3a5d052.jpg)
+### On clicking “Enter the IP address of first device”
+![1](https://user-images.githubusercontent.com/13145914/28239323-bbc28932-6987-11e7-9e79-66b0f7e303f3.png)
 
-### Entering for second device
-![poll_user3](https://user-images.githubusercontent.com/13145914/27858955-dbe0c56c-6194-11e7-8246-697100c7434a.jpg)
+### Status Online of Device
+![2](https://user-images.githubusercontent.com/13145914/28239340-0635760a-6988-11e7-82ea-2ccb37e253da.png)
+
+### When Second Device is offline
+![3](https://user-images.githubusercontent.com/13145914/28239341-0639eca8-6988-11e7-81ec-6f05e6329eae.png)
+
+### Both the devices are online and showing the values
+![4](https://user-images.githubusercontent.com/13145914/28239343-063e73ea-6988-11e7-8236-8b5ed65950b3.png)
+
+### Screenshot of log file saved in local computer
+![5](https://user-images.githubusercontent.com/13145914/28239342-063e5aae-6988-11e7-9e82-40c9139092d8.png)
 
 
 ## Further any improvements if you feel to mention then they are most welcome as there is always a chance of getting better.
